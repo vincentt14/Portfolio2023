@@ -13,7 +13,7 @@ export const Footer = () => {
   const shortcuts = [
     {
       href: "https://github.com/vincentt14",
-      label: "Github",
+      label: "GitHub",
     },
     {
       href: "https://www.linkedin.com/in/vincent-240775185/",
@@ -69,10 +69,10 @@ export const Footer = () => {
           <div className="mb-5 w-full flex-col place-items-center font-medium md:flex md:w-1/3">
             <ul>
               <h2 className="py-1 text-4xl font-bold text-white">Vincent.</h2>
-              <hr className="w-[150px] my-3 p-1 bg-black border border-borderColor rounded-sm" />
+              <hr className="w-20 my-3 p-1 bg-black border border-borderColor rounded-sm" />
               <h3 className="my-4 text-2xl font-bold text-white">Contact Me</h3>
               {contacts.map((contact) => (
-                <div className="flex gap-2 my-2">
+                <div key={contact.target} className="flex gap-2 my-2">
                   <p className="py-2 text-primary">{contact.label}:</p>
                   <button className="p-2 border border-borderColor rounded-sm text-primary font-mono hover:text-white hover:border-primary" onClick={() => onHandleCopy(contact)}>
                     {contact.target}

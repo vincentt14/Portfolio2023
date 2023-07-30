@@ -1,13 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { Link } from "react-scroll";
 
 import CustomButton from "../shared/CustomButton";
-
-interface NavbarProps {
-  handleThemeSwitch: () => void;
-}
 
 export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -29,13 +25,36 @@ export const Navbar = () => {
     };
   }, []);
 
+  const navigations = [
+    {
+      to: "home",
+      title: "Home",
+    },
+    {
+      to: "about",
+      title: "About Me",
+    },
+    {
+      to: "experience",
+      title: "Experience",
+    },
+    {
+      to: "projects",
+      title: "Projects",
+    },
+    {
+      to: "contact",
+      title: "Contact Me",
+    },
+  ];
+
   return (
     <nav>
       <div ref={refHead} className="bg-transparant absolute top-0 left-0 w-full flex items-center z-10 transition duration-100 ease-in-out pt-2">
         <div className="container">
           <div className="flex items-center justify-between relative">
             <div className="px-4">
-              <Link href="/" className="cursor-pointer text-primary font-bold text-lg block py-6 hover:text-white">
+              <Link to="home" spy={true} smooth={true} offset={0} duration={500} className="flex cursor-pointer text-white font-bold text-lg py-6 item items-center justify-center gap-2">
                 Vincent.
               </Link>
             </div>
@@ -54,35 +73,17 @@ export const Navbar = () => {
                 }
               >
                 <ul className="block lg:flex">
-                  <li className="group">
-                    <Link href="/" className="cursor-pointer text-primary text-base py-2 mx-8 flex group-hover:text-white" onClick={onToggleClick}>
-                      Home
-                    </Link>
-                  </li>
-                  <li className="group">
-                    <Link href="/playingNow" className="cursor-pointer text-primary text-base py-2 mx-8 flex group-hover:text-white" onClick={onToggleClick}>
-                      About Me
-                    </Link>
-                  </li>
-                  <li className="group">
-                    <Link href="/userDashboard" className="cursor-pointer text-primary text-base py-2 mx-8 flex group-hover:text-white" onClick={onToggleClick}>
-                      projects
-                    </Link>
-                  </li>
-
-                  <li className="group">
-                    <Link href="/adminDashboard" className="cursor-pointer text-primary text-base py-2 mx-8 flex group-hover:text-white" onClick={onToggleClick}>
-                      Contact Me
-                    </Link>
-                  </li>
+                  {navigations.map((navigation) => (
+                    <li key={navigation.to} className="group">
+                      <Link to={navigation.to} spy={true} smooth={true} offset={0} duration={500} className="cursor-pointer text-primary text-base py-2 mx-8 flex group-hover:text-white" onClick={onToggleClick}>
+                        {navigation.title}
+                      </Link>
+                    </li>
+                  ))}
 
                   <li className="group">
                     <CustomButton to="/" btnType="button" title="Resume" containerStyles="ml-5 lg:ml-0 border-borderColor bg-tertiary hover:border-primary lg:my-0 py-[10px]" textStyles="text-white" />
                   </li>
-
-                  {/* <li className="group">
-                    <CustomButton btnType="button" title="Login" to="/login" containerStyles="border-black bg-white hover:bg-[#ededed]" textStyles="text-black hover:text-[#262626]" />
-                  </li> */}
                 </ul>
               </nav>
             </div>
@@ -92,3 +93,9 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+{
+  /* <li className="group">
+  <CustomButton btnType="button" title="Login" to="/login" containerStyles="border-black bg-white hover:bg-[#ededed]" textStyles="text-black hover:text-[#262626]" />
+</li> */
+}

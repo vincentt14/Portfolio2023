@@ -13,7 +13,7 @@ export interface CustomButtonProps {
 const CustomButton = ({ title, btnType = "button", containerStyles, onClick, textStyles, to }: CustomButtonProps) => {
   if (btnType === "button") {
     return (
-      <Link href={to!}>
+      <Link href={to!} target="blank">
         <button type={btnType} className={`my-4 py-3 px-6 rounded-md font-semibold border ${containerStyles}`} onClick={onClick}>
           <span className={`${textStyles}`}>{title}</span>
         </button>
