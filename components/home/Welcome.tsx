@@ -22,11 +22,11 @@ export const Welcome = () => {
           />
         </span>
       </h2>
-      <p className="text-primary max-w-md text-justify font-mono">
+      <p className="text-primary max-w-lg text-justify font-mono">
         "Keep Moving Forward Despite How Long It Take to Understand a Very Simple Thing."
         <span className="block text-slate-200 mt-1">- Norbertus Dewa Rucci.</span>
       </p>
-      <div className="grid grid-cols-2 lg:flex my-3 gap-x-2">
+      <div className="grid grid-cols-2 my-3 gap-x-2 lg:max-w-lg">
         <Link to="about" spy={true} smooth={true} offset={0} duration={500}>
           <button type="button" className="w-full my-4 py-3 px-6 rounded-md font-semibold border border-black bg-white hover:bg-[#ededed]">
             <span className="text-black hover:text-[#262626]">About Me</span>

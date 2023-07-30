@@ -1,16 +1,42 @@
+import Swal from "sweetalert2";
 import CustomButton from "../shared/CustomButton";
+
+interface IContact {
+  href: string;
+  name: string;
+  label: string;
+}
 
 export const Info = () => {
   const contacts = [
     {
       href: "https://github.com/vincentt14",
-      label: "GitHub",
+      name: "GitHub",
+      label: "Go to my Github Profile 🚀"
     },
     {
       href: "https://www.linkedin.com/in/vincent-240775185/",
-      label: "LinkedIn",
+      name: "LinkedIn",
+      label: "Go to my LinkedIn Profile ⚡"
     },
   ];
+
+  const instagram = {
+    href: "https://www.instagram.com/_vincenttlim",
+    name: "Instagram",
+    label: "Go to my Instagram Profile 🪐"
+  };
+
+  const onHandleClick = (contact: IContact) => {
+    Swal.fire({
+      title: contact.label,
+      background: "#111",
+      confirmButtonColor: "#000",
+      showCloseButton: true,
+      confirmButtonText: `<a classname="btnn" href=${contact.href} target="blank" >Open it in new tab!🔥</a>`,
+      icon: "info",
+    });
+  };
 
   return (
     <>
@@ -33,11 +59,11 @@ export const Info = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-x-2 lg:max-w-lg my-4 lg:my-0">
         {contacts.map((contact) => (
           <div key={contact.href}>
-            <CustomButton btnType="button" title={contact.label} to={contact.href} containerStyles="!my-1 w-full border-borderColor bg-tertiary hover:border-primary" textStyles="text-white" />
+            <CustomButton btnType="submit" title={contact.name} containerStyles="!my-1 w-full border-borderColor bg-tertiary hover:border-primary" textStyles="text-white" onClick={() => onHandleClick(contact)} />
           </div>
         ))}
         <div className="col-span-2 md:col-span-1">
-          <CustomButton btnType="button" title="Instagram" to="https://www.instagram.com/_vincenttlim" containerStyles="!my-1 w-full border-borderColor bg-tertiary hover:border-primary" textStyles="text-white" />
+          <CustomButton btnType="submit" title={instagram.name} to={instagram.href} containerStyles="!my-1 w-full border-borderColor bg-tertiary hover:border-primary" textStyles="text-white" onClick={() => onHandleClick(instagram)} />
         </div>
       </div>
     </>

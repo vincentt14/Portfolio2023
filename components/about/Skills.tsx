@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import CustomButton from "../shared/CustomButton";
+
+import { FrontEndStacks } from "./stacks/FrontEndStacks";
+import { BackEndStacks } from "./stacks/BackEndStacks";
+import { OtherStacks } from "./stacks/OtherStacks";
 
 export const Skills = () => {
   const [menu, setMenu] = useState<number>(1);
@@ -28,13 +31,16 @@ export const Skills = () => {
         {stacks.map((stack) => (
           <div key={stack.menu}>
             <button
-              className={menu === stack.menu ? "rounded-sm w-full py-3 my-1 border border-borderColor bg-white hover:bg-[#ededed]" : "rounded-sm w-full py-3 my-1 border border-borderColor bg-tertiary hover:border-primary"}
+              className={menu === stack.menu ? "rounded-sm w-full py-3 my-1 border border-borderColor bg-white hover:bg-[#ededed]" : "rounded-sm w-full py-3 my-1 border border-borderColor bg-secondary hover:border-primary"}
               onClick={() => setMenu(stack.menu)}
             >
               <p className={menu === stack.menu ? "text-black hover:text-[#262626]" : "text-white"}>{stack.title}</p>
             </button>
           </div>
         ))}
+      </div>
+      <div className="grid grid-cols-3 lg:grid-cols-5 mt-5 w-full gap-2 text-4xl md:text-5xl text-primary px-4">
+      {menu === 1 ? <FrontEndStacks /> : menu === 2 ? <BackEndStacks /> : <OtherStacks />}
       </div>
     </div>
   );
