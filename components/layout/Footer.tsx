@@ -63,7 +63,7 @@ export const Footer = () => {
     });
   };
 
-  const cv_file_url = "http://localhost:3000/pdf/CV_Vincent.pdf";
+  const cv_file_url = "/pdf/CV_Vincent.pdf";
 
   const downloadFile = (url: any) => {
     const fileName = url.split("/").pop();
