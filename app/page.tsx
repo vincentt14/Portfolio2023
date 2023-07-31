@@ -17,18 +17,18 @@ export default function Home() {
     <main className="container">
       <section id="home" className="pt-28 pb-24 lg:pt-44 lg:pb-32">
         <div className="flex flex-col lg:flex-row">
-          <div className="w-full self-center px-4 lg:w-1/2">
+          <div className="w-full self-center md:px-4 lg:w-1/2">
             <Welcome />
             <Status />
           </div>
           <div className="w-full px-4 pt-4 self-center lg:w-1/2 border-2 shadow-lg border-borderColor rounded-md bg-secondary">
-            <Lottie animationData={astro} style={{ width: "350px", height: "350px" }} className="mx-auto blur-none" />
+            <Lottie animationData={astro} style={{ width: "300px", height: "300px" }} className="mx-auto blur-none" />
           </div>
         </div>
       </section>
       <section id="about" className="pb-16 pt-32 lg:pb-28">
         <div className="flex flex-col lg:flex-row">
-          <div className="w-full self-center px-4 lg:w-1/2 text-justify">
+          <div className="w-full self-center md:px-4 lg:w-1/2 text-justify">
             <Info />
           </div>
           <div className="w-full px-4 pt-4 self-center lg:w-1/2 shadow-lg border-2 border-borderColor rounded-md bg-tertiary">
@@ -39,7 +39,7 @@ export default function Home() {
       </section>
       <section id="experience" className="pb-16 pt-32 lg:pb-28">
         <div className="flex flex-col lg:flex-row">
-          <div className="w-full self-center px-4 lg:w-2/3 text-justify">
+          <div className="w-full self-center md:px-4 lg:w-2/3 text-justify">
             <Journey />
           </div>
           <div className="w-full px-4 pt-4 self-center lg:w-1/3 shadow-lg border-2 border-borderColor rounded-md bg-white">

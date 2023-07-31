@@ -63,7 +63,7 @@ export const Certificate = () => {
       </p>
       <div className="grid md:grid-cols-2 my-3 w-full lg:w-5/6">
         {expertCerticiates.map((expert) => (
-          <div key={expert.img} className="mx-4 mb-6 md:mb-0 border border-borderColor bg-tertiary rounded-md">
+          <div key={expert.img} className="md:mx-4 mb-6 md:mb-0 border border-borderColor bg-tertiary rounded-md">
             <div className="bg-black flex justify-center items-center border rounded-sm border-white shadow-lg">
               <img src={expert.img} alt={expert.name} className="w-full h-auto mx-auto rounded-sm" />
             </div>

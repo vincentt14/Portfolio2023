@@ -65,7 +65,7 @@ export const Navbar = () => {
       <div ref={refHead} className="bg-transparant absolute top-0 left-0 w-full flex items-center z-10 transition duration-100 ease-in-out pt-2">
         <div className="container">
           <div className="flex items-center justify-between relative">
-            <div className="px-4">
+            <div className="md:px-4">
               <Link to="home" spy={true} smooth={true} offset={0} duration={500} className="flex cursor-pointer text-white font-bold text-lg py-6 item items-center justify-center gap-2">
                 Vincent.
               </Link>
