@@ -26,7 +26,7 @@ export const Skills = () => {
 
   return (
     <div className="mt-10 w-full self-center flex flex-col items-center justify-center">
-      <p className=" font-bold text-white text-4xl my-3 lg:text-5xl">My Skills</p>
+      <p className=" font-bold text-white text-3xl my-3 lg:text-4xl">My Skills</p>
       <div className="grid grid-cols-3 my-3 w-full">
         {stacks.map((stack) => (
           <div key={stack.menu}>

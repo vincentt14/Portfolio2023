@@ -1,8 +1,7 @@
 import Link from "next/link";
-
+import { toast } from "react-hot-toast";
 import { SiNextdotjs } from "react-icons/si";
 import { BiLogoTypescript, BiLogoTailwindCss } from "react-icons/bi";
-import { toast } from "react-hot-toast";
 
 interface IContact {
   label: string;
@@ -55,15 +54,27 @@ export const Footer = () => {
     navigator.clipboard.writeText(contact.target);
     toast.success(`${contact.label} copied to the clipboard.`, {
       style: {
-        border: '1px solid #3e3e3e',
+        border: "1px solid #3e3e3e",
         background: "#111",
         color: "#fff",
       },
     });
   };
 
+  const cv_file_url = "http://localhost:3000/pdf/CV_Vincent.pdf";
+
+  const downloadFile = (url: any) => {
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
+
   return (
-    <footer className="border-t border-borderColor bg-tertiary pt-20 pb-5">
+    <footer id="contact" className="border-t border-borderColor bg-tertiary pt-20 pb-5">
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="mb-5 w-full flex-col place-items-center font-medium md:flex md:w-1/3">
@@ -97,14 +108,12 @@ export const Footer = () => {
             <ul className="text-slate-400">
               <h3 className="mb-5 mt-4 text-xl font-semibold text-white">Resume</h3>
               <li>
-                <a href="/" target="blank" className="mb-2 inline-block text-base text-primary hover:text-white">
+                <div className="mb-2 inline-block text-base text-primary hover:text-white cursor-pointer" onClick={() => downloadFile(cv_file_url)}>
                   Download
-                </a>
+                </div>
               </li>
               <li className="mt-14">
-                <Link href="/" download="Resume_Vincent" className="mb-2 inline-block font-light text-primary">
-                  © 2023 Vincent
-                </Link>
+                <p className="mb-2 inline-block font-light text-primary">© 2023 Vincent</p>
                 <div className="flex gap-x-2">
                   {stacks.map((stack) => (
                     <div key={stack.name} className="w-11 h-11 bg-black border border-borderColor rounded-md flex items-center justify-center">

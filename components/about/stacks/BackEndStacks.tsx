@@ -1,5 +1,5 @@
-import { SiLaravel, SiPhp, SiFirebase, SiPlanetscale, SiExpress, SiNestjs } from "react-icons/si";
 import { toast } from "react-hot-toast";
+import { SiLaravel, SiPhp, SiFirebase, SiPlanetscale, SiExpress, SiNestjs } from "react-icons/si";
 
 export const BackEndStacks = () => {
   const stacks = [
@@ -43,7 +43,7 @@ export const BackEndStacks = () => {
   return (
     <>
       {stacks.map((stack) => (
-        <div className="p-3 md:p-4 border border-borderColor bg-tertiary rounded-sm hover:text-white cursor-pointer hover:border-primary" onClick={() => onHandleClick(stack.title)}>
+        <div key={stack.title} className="p-3 md:p-4 border border-borderColor bg-tertiary rounded-sm hover:text-white cursor-pointer hover:border-primary" onClick={() => onHandleClick(stack.title)}>
           <p key={stack.title} className="flex justify-center items-center" title={stack.title}>
             {stack.icon}
           </p>

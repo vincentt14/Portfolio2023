@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+
 import CustomButton from "../shared/CustomButton";
 
 interface IContact {
@@ -33,7 +34,7 @@ export const Info = () => {
       background: "#111",
       confirmButtonColor: "#000",
       showCloseButton: true,
-      confirmButtonText: `<a classname="btnn" href=${contact.href} target="blank" >Open it in new tab!🔥</a>`,
+      confirmButtonText: `<a href=${contact.href} target="blank">Open it in new tab!🔥</a>`,
       icon: "info",
     });
   };

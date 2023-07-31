@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
+import { useEffect, useRef, useState } from "react";
 
 import CustomButton from "../shared/CustomButton";
 
@@ -48,6 +48,18 @@ export const Navbar = () => {
     },
   ];
 
+  const cv_file_url = "http://localhost:3000/pdf/CV_Vincent.pdf";
+
+  const downloadFile = (url: any) => {
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
+
   return (
     <nav>
       <div ref={refHead} className="bg-transparant absolute top-0 left-0 w-full flex items-center z-10 transition duration-100 ease-in-out pt-2">
@@ -82,7 +94,7 @@ export const Navbar = () => {
                   ))}
 
                   <li className="group">
-                    <CustomButton to="/" btnType="button" title="Resume" containerStyles="ml-5 lg:ml-0 border-borderColor bg-tertiary hover:border-primary lg:my-0 py-[10px]" textStyles="text-white" />
+                    <CustomButton btnType="submit" title="Resume" containerStyles="ml-5 lg:ml-0 border-borderColor bg-tertiary hover:border-primary lg:my-0 py-[10px]" textStyles="text-white" onClick={() => downloadFile(cv_file_url)} />
                   </li>
                 </ul>
               </nav>
@@ -93,9 +105,3 @@ export const Navbar = () => {
     </nav>
   );
 };
-
-{
-  /* <li className="group">
-  <CustomButton btnType="button" title="Login" to="/login" containerStyles="border-black bg-white hover:bg-[#ededed]" textStyles="text-black hover:text-[#262626]" />
-</li> */
-}

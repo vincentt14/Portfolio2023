@@ -1,6 +1,6 @@
+import { toast } from "react-hot-toast";
 import { SiNextdotjs, SiReact, SiRedux, SiBootstrap } from "react-icons/si";
 import { BiLogoTypescript, BiLogoJavascript, BiLogoTailwindCss, BiLogoCss3, BiLogoHtml5 } from "react-icons/bi";
-import { toast } from "react-hot-toast";
 
 export const FrontEndStacks = () => {
   const stacks = [
@@ -56,7 +56,7 @@ export const FrontEndStacks = () => {
   return (
     <>
       {stacks.map((stack) => (
-        <div className="p-3 md:p-4 border border-borderColor bg-tertiary rounded-sm hover:text-white cursor-pointer hover:border-primary" onClick={() => onHandleClick(stack.title)}>
+        <div key={stack.title} className="p-3 md:p-4 border border-borderColor bg-tertiary rounded-sm hover:text-white cursor-pointer hover:border-primary" onClick={() => onHandleClick(stack.title)}>
           <p key={stack.title} className="flex justify-center items-center" title={stack.title}>
             {stack.icon}
           </p>
