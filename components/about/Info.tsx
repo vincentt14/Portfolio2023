@@ -55,7 +55,7 @@ export const Info = () => {
         </p>
 
         <p className="my-3">
-          I'm currently focused on learning Front-End web development - <span className="text-white">Next.js</span>. I am also a freelancer while looking for a job.
+          I&apos;m currently focused on learning Front-End web development - <span className="text-white">Next.js</span>. I am also a freelancer while looking for a job.
         </p>
       </div>
       <hr className="w-36 my-3 p-1 bg-tertiary border border-borderColor rounded-sm" />
