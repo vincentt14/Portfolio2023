@@ -1,3 +1,5 @@
+"use client";
+
 import { toast } from "react-hot-toast";
 import { SiNextdotjs, SiReact, SiRedux, SiBootstrap } from "react-icons/si";
 import { BiLogoTypescript, BiLogoJavascript, BiLogoTailwindCss, BiLogoCss3, BiLogoHtml5 } from "react-icons/bi";

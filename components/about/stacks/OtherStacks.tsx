@@ -1,3 +1,5 @@
+"use client";
+
 import { toast } from "react-hot-toast";
 import { SiGithub, SiVercel, SiPrisma, SiCypress, SiJest, SiFigma } from "react-icons/si";
 

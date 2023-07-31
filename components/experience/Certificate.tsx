@@ -1,3 +1,5 @@
+"use client";
+
 import Swal from "sweetalert2";
 
 import CustomButton from "../shared/CustomButton";

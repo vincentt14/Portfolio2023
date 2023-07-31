@@ -1,4 +1,5 @@
-import Image from "next/image";
+"use client";
+
 import Swal from "sweetalert2";
 
 import ReadMore from "../shared/ReadMore";

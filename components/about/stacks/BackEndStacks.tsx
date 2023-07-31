@@ -1,3 +1,5 @@
+"use client";
+
 import { toast } from "react-hot-toast";
 import { SiLaravel, SiPhp, SiFirebase, SiPlanetscale, SiExpress, SiNestjs } from "react-icons/si";
 
