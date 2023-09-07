@@ -1,22 +1,29 @@
 export const Journey = () => {
   const experiences = [
+
     {
-      id: 3,
-      place: "Universitas Multimedia Nusantara",
-      title: "Bachelor's Degree | Informatics",
-      timespan: "Aug 2019 - Jul 2023",
-    },
-    {
-      id: 2,
+      id: 4,
       place: "Dicoding Academy",
-      title: "Studi Independen | Front-End and React",
+      title: "Study Independent | Front-End & React",
       timespan: "Aug 2022 - Dec 2022",
     },
     {
-      id: 1,
+      id: 3,
       place: "Udemy",
       title: "Modern React with Redux",
       timespan: "Sep 2022 - Dec 2022",
+    },
+    {
+      id: 2,
+      place: "Hashmicro",
+      title: "Software Implementation Consultant",
+      timespan: "Feb 2022 - Jun 2022",
+    },
+    {
+      id: 1,
+      place: "Multimedia Nusantara University",
+      title: "Bachelor's Degree | Informatics",
+      timespan: "Aug 2019 - Jul 2023",
     },
   ];
 

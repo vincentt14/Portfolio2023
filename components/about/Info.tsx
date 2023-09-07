@@ -55,7 +55,7 @@ export const Info = () => {
         </p>
 
         <p className="my-3">
-          I&apos;m currently focused on learning Front-End web development - <span className="text-white">Next.js</span>. I am also a freelancer while looking for a job.
+          I&apos;m currently working on <span className="text-white">E2EE</span> Password Management Project using <span className="text-white">AES & RSA Algorithm</span> called <span className="text-white">CORE</span>. I also accept projects with a good price, feel free to contact me. 
         </p>
       </div>
       <hr className="w-36 my-3 p-1 bg-tertiary border border-borderColor rounded-sm" />
